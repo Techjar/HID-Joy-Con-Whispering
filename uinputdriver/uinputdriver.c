@@ -548,7 +548,7 @@ int main(void)
         return -1;
     }
 
-    char *uinput_path = udev_device_get_devnode(uinput);
+    char *uinput_path = "/dev/uinput";
     if (uinput_path == NULL)
     {
         fprintf(stderr, "cannot find path to uinput\n");
@@ -586,7 +586,7 @@ int main(void)
     ioctl(fd, UI_SET_ABSBIT, ABS_RY);
 
     memset(&udevice, 0, sizeof(udevice));
-    snprintf(udevice.name, UINPUT_MAX_NAME_SIZE, "joycon");
+    snprintf(udevice.name, UINPUT_MAX_NAME_SIZE, "Switch Pro Controller");
     udevice.id.bustype = BUS_USB;
     udevice.id.vendor  = 0x1;
     udevice.id.product = 0x1;
