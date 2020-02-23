@@ -541,19 +541,19 @@ int main(void)
         return -1;
     } 
 
-    uinput = udev_device_new_from_subsystem_sysname(udev, "misc", "uinput");
+    /*uinput = udev_device_new_from_subsystem_sysname(udev, "misc", "uinput");
     if (uinput == NULL)
     {
         fprintf(stderr, "uinput creation failed\n");
         return -1;
-    }
+    }*/
 
     char *uinput_path = "/dev/uinput";
-    if (uinput_path == NULL)
+    /*if (uinput_path == NULL)
     {
         fprintf(stderr, "cannot find path to uinput\n");
         return -1;
-    }
+    }*/
 
     fd = open(uinput_path, O_WRONLY | O_NONBLOCK);
         
